@@ -2,6 +2,9 @@
 
 import pyautogui, sys
 
+ScrSize = pyautogui.size()
+print(ScrSize)
+
 print("Press Ctrl-C to quit.")
 
 try:

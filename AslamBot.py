@@ -1,9 +1,12 @@
 # Aslam Bot 1.0 to IRPF 2025
 
 import pywinauto, pyautogui, time
+import pandas as pd
 from pywinauto.keyboard import send_keys
 
-cpf = "770.396.770-08"
+df = pd.read_excel("C:\\Users\\Desktop\\Desktop\\IRPF-Bot\\Test\\dados.xlsx")
+
+cpf = df.iloc[0,0]
 
 # Functions
 def AbrirIRPF():

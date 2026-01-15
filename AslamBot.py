@@ -17,10 +17,21 @@ def AbrirIRPF():
     send_keys("IRPF 2025")
     time.sleep(0.5)
     pyautogui.press('enter')
+    
+AbrirIRPF()
+# Cor do Trigger para "Em Preenchimento"
+cor = (204, 227, 252)
 
+# Logica do trigger correta, mas pixel errado
+while True:
+    if pyautogui.pixelMatchesColor(215,90,(204, 227, 252)) == True:
+        pyautogui.click(x=680,y=340)
+        break
+    
+"""
 def AbrirDeclaracaoCliente():
     # Move to "Em Preenchimento" and click it
-    time.sleep(15)
+    # time.sleep(15)
     pyautogui.click(x=680,y=340)
 
     # Search for the client by the CPF and open 
@@ -52,3 +63,4 @@ def PreencherBenseDireitos():
 AbrirIRPF()
 AbrirDeclaracaoCliente()
 PreencherBenseDireitos()
+"""

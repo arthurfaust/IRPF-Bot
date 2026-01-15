@@ -8,23 +8,23 @@ df = pd.read_excel("C:\\Users\\Desktop\\Desktop\\IRPF-Bot\\Test\\dados.xlsx")
 
 cpf = df.iloc[0,0]
 
-# Functions
 def AbrirIRPF():
     # Open Start Menu, search the IRPF program and open it
     time.sleep(0.5)
     pyautogui.press('win')
     time.sleep(0.5)
-    send_keys("IRPF 2025")
+    send_keys("IRPF2025")
     time.sleep(0.5)
     pyautogui.press('enter')
     
 def AbrirDeclaracaoCliente():
+    # Trigger para abrir a declaração do cliente
     # Cor do pixel de trigger (680,195) = (31, 47, 101)
-    # Trigger para iniciar automação
     while True:
         if pyautogui.pixelMatchesColor(680,195,(31, 47, 101)) == True:
             
             # Move to "Em preenchimento" and click it
+            time.sleep(0.5)
             pyautogui.click(x=680,y=340)
 
             # Search for the client by the CPF and open 
@@ -43,20 +43,24 @@ def AbrirDeclaracaoCliente():
     
 def PreencherBenseDireitos():
     # Trigger para iniciar o preenchimento de "Bens e Direitos"
-    
-    # Move to the arrow and scroll the menu down
-    time.sleep(5)
-    pyautogui.moveTo(x=350,y=450)
-    pyautogui.click(clicks=16)
+    # Cor do pixel de trigger (180,90) = (160, 225, 185)
+    while True:
+        if pyautogui.pixelMatchesColor(180,90,(160, 225, 185)) == True:
+            
+            # Move to the arrow and scroll the menu down
+            pyautogui.moveTo(x=350,y=450)
+            pyautogui.click(clicks=16)
 
-    # Move to "Bens e Direitos" and click it
-    time.sleep(0.5)
-    pyautogui.click(x=85,y=440)
+            # Move to "Bens e Direitos" and click it
+            time.sleep(0.5)
+            pyautogui.click(x=85,y=440)
 
-    # Move to "Novo" and click it
-    time.sleep(0.5)
-    pyautogui.click(x=1105,y=665)
- 
+            # Move to "Novo" and click it
+            time.sleep(0.5)
+            pyautogui.click(x=1105,y=665)
+            
+            break
+
 AbrirIRPF()
 AbrirDeclaracaoCliente()
 PreencherBenseDireitos()

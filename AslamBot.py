@@ -18,35 +18,32 @@ def AbrirIRPF():
     time.sleep(0.5)
     pyautogui.press('enter')
     
-AbrirIRPF()
-# Cor do Trigger para "Em Preenchimento"
-cor = (204, 227, 252)
-
-# Logica do trigger correta, mas pixel errado
-while True:
-    if pyautogui.pixelMatchesColor(215,90,(204, 227, 252)) == True:
-        pyautogui.click(x=680,y=340)
-        break
-    
-"""
 def AbrirDeclaracaoCliente():
-    # Move to "Em Preenchimento" and click it
-    # time.sleep(15)
-    pyautogui.click(x=680,y=340)
+    # Cor do pixel de trigger (680,195) = (31, 47, 101)
+    # Trigger para iniciar automação
+    while True:
+        if pyautogui.pixelMatchesColor(680,195,(31, 47, 101)) == True:
+            
+            # Move to "Em preenchimento" and click it
+            pyautogui.click(x=680,y=340)
 
-    # Search for the client by the CPF and open 
-    time.sleep(0.5)
-    pyautogui.click(x=680,y=378)
-    time.sleep(0.5)
-    send_keys(cpf)
-    time.sleep(0.5)
-    pyautogui.press('enter')
+            # Search for the client by the CPF and open 
+            time.sleep(0.5)
+            pyautogui.click(x=680,y=378)
+            time.sleep(0.5)
+            send_keys(cpf)
+            time.sleep(0.5)
+            pyautogui.press('enter')
 
-    # Move to the client found and double click to open it
-    time.sleep(0.5)
-    pyautogui.doubleClick(x=720,y=435)
+            # Move to the client found and double click to open it
+            time.sleep(0.5)
+            pyautogui.doubleClick(x=720,y=435)
+        
+            break
     
 def PreencherBenseDireitos():
+    # Trigger para iniciar o preenchimento de "Bens e Direitos"
+    
     # Move to the arrow and scroll the menu down
     time.sleep(5)
     pyautogui.moveTo(x=350,y=450)
@@ -63,4 +60,3 @@ def PreencherBenseDireitos():
 AbrirIRPF()
 AbrirDeclaracaoCliente()
 PreencherBenseDireitos()
-"""

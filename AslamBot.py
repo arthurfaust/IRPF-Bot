@@ -4,17 +4,19 @@ import pywinauto, pyautogui, time
 import pandas as pd
 from pywinauto.keyboard import send_keys
 
-df = pd.read_excel("C:\\Users\\Desktop\\Desktop\\IRPF-Bot\\Test\\dados.xlsx", header=None)
+df = pd.read_excel("C:\\Users\\Desktop\\Desktop\\IRPF-Bot\\Test\\InformeTeste.xlsx", header=None)
 
-cpf = "770.396.770-08"
+linhaAtual = 18
+colAtual = 0
 
-GrupoAtual = df.iloc[1,0]
-CodigoAtual = df.iloc[1,1]
-LocalAtual = df.iloc[1,2]
-CNPJAtual = df.iloc[1,3]
-DiscAtual = df.iloc[1,4]
-Sit23 = df.iloc[1,5]
-Sit24 = df.iloc[1,6]
+nome = df.iloc[1,0]
+GrupoAtual = df.iloc[linhaAtual,0]
+CodigoAtual = df.iloc[linhaAtual,1]
+LocalAtual = df.iloc[linhaAtual,2]
+CNPJAtual = df.iloc[linhaAtual,3]
+DiscAtual = df.iloc[linhaAtual,4]
+Sit23 = df.iloc[linhaAtual,5]
+Sit24 = df.iloc[linhaAtual,6]
 
 def AbrirIRPF():
     # Open Start Menu, search the IRPF program and open it
@@ -38,7 +40,7 @@ def AbrirDeclaracaoCliente():
             # Move to the search bar and click it
             pyautogui.click(x=680,y=378)
             time.sleep(0.5)
-            send_keys(cpf)
+            send_keys(nome, with_spaces=True)
             time.sleep(0.5)
             pyautogui.press('enter')
             time.sleep(0.5)
@@ -64,6 +66,7 @@ def AbrirBenseDireitos():
             break
         
 def NovoLancamento():
+  
     # Move to "Novo" and click it
     time.sleep(0.5)
     pyautogui.click(x=1105,y=665)
@@ -118,9 +121,11 @@ def NovoLancamento():
     for i in range(4):
         pyautogui.press('del')
     time.sleep(0.25)
+    """
     send_keys(Sit23)
     time.sleep(0.25)
     pyautogui.press('enter')
+    """
     
     # Move to "Situação em 31/12/24"
     time.sleep(0.25)

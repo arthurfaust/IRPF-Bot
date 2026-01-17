@@ -66,81 +66,90 @@ def AbrirBenseDireitos():
             break
         
 def NovoLancamento():
-  
-    # Move to "Novo" and click it
-    time.sleep(0.5)
-    pyautogui.click(x=1105,y=665)
+
+    global linhaAtual
     
-    # Move to "Grupo" and write
-    time.sleep(0.5)
-    pyautogui.click(x=630,y=300)
-    time.sleep(0.25)
-    send_keys(GrupoAtual)
-    time.sleep(0.25)
-    pyautogui.press('enter')
+    while True: 
+        # Move to "Novo" and click it
+        time.sleep(0.5)
+        pyautogui.click(x=1105,y=665)
     
-    # Move to "Código" and write
-    time.sleep(0.5)
-    pyautogui.click(x=630,y=355)
-    time.sleep(0.25)
-    send_keys(CodigoAtual)
-    time.sleep(0.25)
-    pyautogui.press('enter')
+        # Move to "Grupo" and write
+        time.sleep(0.5)
+        pyautogui.click(x=630,y=300)
+        time.sleep(0.25)
+        send_keys(GrupoAtual)
+        time.sleep(0.25)
+        pyautogui.press('enter')
     
-    # Move to "Localização" and write
-    time.sleep(0.5)
-    pyautogui.click(x=630,y=455)
-    time.sleep(0.25)
+        # Move to "Código" and write
+        time.sleep(0.5)
+        pyautogui.click(x=630,y=355)
+        time.sleep(0.25)
+        send_keys(CodigoAtual)
+        time.sleep(0.25)
+        pyautogui.press('enter')
     
-    for i in range(13):
-        pyautogui.press('backspace')
+        # Move to "Localização" and write
+        time.sleep(0.5)
+        pyautogui.click(x=630,y=455)
+        time.sleep(0.25)
+    
+        for i in range(13):
+            pyautogui.press('backspace')
         
-    send_keys(LocalAtual, with_spaces=True)
-    time.sleep(0.5)
-    pyautogui.press('down')
-    pyautogui.press('enter')
+        send_keys(LocalAtual, with_spaces=True)
+        time.sleep(0.5)
+        pyautogui.press('down')
+        pyautogui.press('enter')
     
-    # Move to "Discriminação" and write
-    time.sleep(0.5)
-    pyautogui.click(x=630,y=650)
-    time.sleep(0.25)
-    send_keys(DiscAtual, with_spaces=True)
-    time.sleep(0.25)
-    pyautogui.press('enter')
+        # Move to "Discriminação" and write
+        time.sleep(0.5)
+        pyautogui.click(x=630,y=650)
+        time.sleep(0.25)
+        send_keys(DiscAtual, with_spaces=True)
+        time.sleep(0.25)
+        pyautogui.press('enter')
     
-    # Scroll down
-    time.sleep(0.25)
-    pyautogui.moveTo(1348,380)
-    time.sleep(0.25)
-    pyautogui.dragTo(1348,520,1,button='left')
+        # Scroll down
+        time.sleep(0.25)
+        pyautogui.moveTo(1348,380)
+        time.sleep(0.25)
+        pyautogui.dragTo(1348,520,1,button='left')
     
-    # Move to "Situação em 31/12/23"
-    time.sleep(0.25)
-    pyautogui.click(x=480,y=630)
-    time.sleep(0.25)
-    for i in range(4):
-        pyautogui.press('del')
-    time.sleep(0.25)
-    """
-    send_keys(Sit23)
-    time.sleep(0.25)
-    pyautogui.press('enter')
-    """
+        # Move to "Situação em 31/12/23"
+        time.sleep(0.25)
+        pyautogui.click(x=480,y=630)
+        time.sleep(0.25)
+        for i in range(4):
+            pyautogui.press('del')
+        time.sleep(0.25)
+        """
+        send_keys(Sit23)
+        time.sleep(0.25)
+        pyautogui.press('enter')
+        """
     
-    # Move to "Situação em 31/12/24"
-    time.sleep(0.25)
-    pyautogui.click(x=665,y=630)
-    time.sleep(0.25)
-    for i in range(4):
-        pyautogui.press('del')
-    time.sleep(0.25)
-    send_keys(Sit24)
-    time.sleep(0.25)
-    pyautogui.press('enter')
+        # Move to "Situação em 31/12/24"
+        time.sleep(0.25)
+        pyautogui.click(x=665,y=630)
+        time.sleep(0.25)
+        for i in range(4):
+            pyautogui.press('del')
+        time.sleep(0.25)
+        send_keys(Sit24)
+        time.sleep(0.25)
+        pyautogui.press('enter')
     
-    # Move to "Ok" and click it
-    time.sleep(0.25)
-    pyautogui.click(x=1100,y=710)
+        # Move to "Ok" and click it
+        time.sleep(0.25)
+        pyautogui.click(x=1100,y=710)
+    
+        linhaAtual = linhaAtual + 1 
+        print(linhaAtual)
+        
+        # Verifica se a proxima linha esta vazia
+        if pd.isna(df.iloc[linhaAtual,0]): break
     
 AbrirIRPF()
 AbrirDeclaracaoCliente()

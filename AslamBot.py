@@ -6,18 +6,6 @@ from pywinauto.keyboard import send_keys
 
 df = pd.read_excel("C:\\Users\\Desktop\\Desktop\\IRPF-Bot\\Test\\InformeTeste.xlsx", header=None)
 
-linhaAtual = 18
-colAtual = 0
-
-nome = df.iloc[1,0]
-GrupoAtual = df.iloc[linhaAtual,0]
-CodigoAtual = df.iloc[linhaAtual,1]
-LocalAtual = df.iloc[linhaAtual,2]
-CNPJAtual = df.iloc[linhaAtual,3]
-DiscAtual = df.iloc[linhaAtual,4]
-Sit23 = df.iloc[linhaAtual,5]
-Sit24 = df.iloc[linhaAtual,6]
-
 def AbrirIRPF():
     # Open Start Menu, search the IRPF program and open it
     time.sleep(0.5)
@@ -28,6 +16,8 @@ def AbrirIRPF():
     pyautogui.press('enter')
     
 def AbrirDeclaracaoCliente():
+    
+    nome = df.iloc[1,0]
     # Trigger para abrir a declaração do cliente
     # Cor do pixel de trigger (680,195) = (31, 47, 101)
     while True:
@@ -66,10 +56,19 @@ def AbrirBenseDireitos():
             break
         
 def NovoLancamento():
-
-    global linhaAtual
+    linhaAtual = 18
     
-    while True: 
+    while True:
+        
+        #colAtual = 0
+        GrupoAtual = df.iloc[linhaAtual,0]
+        CodigoAtual = df.iloc[linhaAtual,1]
+        LocalAtual = df.iloc[linhaAtual,2]
+        #CNPJAtual = df.iloc[linhaAtual,3]
+        DiscAtual = df.iloc[linhaAtual,4]
+        #Sit23 = df.iloc[linhaAtual,5]
+        Sit24 = df.iloc[linhaAtual,6]
+        
         # Move to "Novo" and click it
         time.sleep(0.5)
         pyautogui.click(x=1105,y=665)

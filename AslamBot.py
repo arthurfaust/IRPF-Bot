@@ -62,10 +62,6 @@ def NovoLancamento():
     # Enquanto a linha atual for menor que o tamanho do dataframe
     while linhaAtual < len(df):
 
-        # Se a próxima célula estiver vazia, para a automação
-        if pd.isna(df.iloc[linhaAtual, 0]):
-            break
-
         GrupoAtual = df.iloc[linhaAtual,0]
         CodigoAtual = df.iloc[linhaAtual,1]
         LocalAtual = df.iloc[linhaAtual,2]
@@ -149,6 +145,10 @@ def NovoLancamento():
 
         linhaAtual += 1
         print(linhaAtual)
+        
+        # Se a próxima célula estiver vazia, para a automação
+        if pd.isna(df.iloc[linhaAtual, 0]):
+            break
 
 AbrirIRPF()
 AbrirDeclaracaoCliente()

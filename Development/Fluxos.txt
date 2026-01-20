@@ -1,0 +1,209 @@
+Lançamento de Bens e Direitos
+
+Clicar em Bens e Direitos
+Clicar em Novo
+Preencher Grupo
+Preencher Código
+    Se Grupo = 03 && Código = 01
+        Preencher Localização
+            Se Localização != 105 - Brasil
+                Preencher Discriminação
+                Scroll Down
+                Negociado em bolsa? S/N
+                    Se sim
+                        Preencher Código de Negociação
+				Apagar Situação em 31/12/2023
+				Preencher Situação em 31/12/2024
+				Preencher Lucro ou Prejuízo em Aplicação Financeira
+				Preencher Imposto Pago no Exterior em Aplicação Financeira
+				Preencher Valor Recebido em Lucros e Dividendos
+				Preencher Imposto Pago Exterior em Lucros e Dividendos
+                Clicar em OK
+        Preencher CNPJ
+        Preencher Discriminação
+        Scroll Down
+        Negociado em Bolsa? S/N
+            Se sim
+                Preencher Código de Negociação
+        Apagar Situação em 31/12/2023
+        Preencher Situação em 31/12/2024
+        Clicar em OK
+
+	Se Grupo = 07 && Código = 03
+        Preencher CNPJ do Fundo
+        Preencher Discriminação
+        Scroll Down
+        Negociado em Bolsa? S/N
+            Se sim
+                Preencher Código de Negociação
+        Apagar Situação em 31/12/2023
+        Preencher Situação em 31/12/2024
+        Clicar em OK
+    
+    Se Grupo = 07 && Código = 07
+        Preencher CNPJ do Fundo
+        Preencher Discriminação
+        Scroll Down
+        Negociado em Bolsa? S/N
+            Se sim
+                Preencher Código de Negociação
+        Apagar Situação em 31/12/2023
+        Preencher Situação em 31/12/2024
+        Clicar em OK
+    
+    Se Grupo = 07 && Código = 08
+        Preencher CNPJ do Fundo
+        Preencher Discriminação
+        Scroll Down
+        Negociado em Bolsa? S/N
+            Se sim
+                Preencher Código de Negociação
+        Apagar Situação em 31/12/2023
+        Preencher Situação em 31/12/2024
+        Clicar em OK
+   
+    Se G = 07 e COD = 99
+        Preencher Localização
+            Se Localização != 105 - Brasil
+                Preencher Discriminação
+                Scroll Down
+                Negociado em bolsa? S/N
+                    Se sim
+                        Preencher Código de Negociação
+				Apagar Situação em 31/12/2023
+				Preencher Situação em 31/12/2024
+				Preencher Lucro ou Prejuízo em Aplicação Financeira
+				Preencher Imposto Pago no Exterior em Aplicação Financeira
+				Preencher Valor Recebido em Lucros e Dividendos
+				Preencher Imposto Pago Exterior em Lucros e Dividendos
+                Clicar em OK
+        Preencher CNPJ
+        Preencher Discriminação
+        Scroll Down
+        Negociado em Bolsa? S/N
+            Se sim
+                Preencher Código de Negociação
+        Apagar Situação em 31/12/2023
+        Preencher Situação em 31/12/2024
+        Clicar em OK
+
+    Se G = 08 e COD = 01
+         Preencher Localização
+            Se Localização != 105 - Brasil
+                É autocustodiante? S/N
+                Preencher Discriminação
+                Scroll Down
+                Negociado em bolsa? S/N
+                    Se sim
+                        Preencher Código de Negociação
+				Apagar Situação em 31/12/2023
+				Preencher Situação em 31/12/2024
+				Preencher Lucro ou Prejuízo em Aplicação Financeira
+				Preencher Imposto Pago no Exterior em Aplicação Financeira
+				Preencher Valor Recebido em Lucros e Dividendos
+				Preencher Imposto Pago Exterior em Lucros e Dividendos
+                Clicar em OK
+        É autocustodiante? S/N
+            Se não
+                Preencher CNPJ Custodiante
+        Scroll Down
+        Preencher Discriminação
+        Apagar Situação em 31/12/2023
+        Preencher Situação em 31/12/2024
+        Clicar em OK
+
+    Se G = 08 e COD = 02
+        Preencher Localização
+            Se Localização != 105 - Brasil
+                Preencher Código Altcoin
+                É autocustodiante? S/N
+                    Se não
+                        Preencher CNPJ Custodiante
+                Scroll Down
+                Preencher Discriminação
+                Apagar Situação em 31/12/2023
+				Preencher Situação em 31/12/2024
+				Preencher Lucro ou Prejuízo em Aplicação Financeira
+				Preencher Imposto Pago no Exterior em Aplicação Financeira
+				Preencher Valor Recebido em Lucros e Dividendos
+				Preencher Imposto Pago Exterior em Lucros e Dividendos
+                Clicar em OK
+        Preencher Código Altcoin
+        É autocustodiante? S/N
+            Se não
+                Preencher CNPJ Custodiante
+        Scroll Down
+        Preencher Discriminação
+        Apagar Situação em 31/12/2023
+        Preencher Situação em 31/12/2024
+        Clicar em OK
+        
+    Se G = 08 e COD = 03
+        Preencher Localização
+            Se Localização != 105 - Brasil
+                Preencher Código Altcoin
+                É autocustodiante? S/N
+                    Se não
+                        Preencher CNPJ Custodiante
+                Scroll Down
+                Preencher Discriminação
+                Apagar Situação em 31/12/2023
+				Preencher Situação em 31/12/2024
+				Preencher Lucro ou Prejuízo em Aplicação Financeira
+				Preencher Imposto Pago no Exterior em Aplicação Financeira
+				Preencher Valor Recebido em Lucros e Dividendos
+				Preencher Imposto Pago Exterior em Lucros e Dividendos
+                Clicar em OK
+        Preencher Código Stablecoin
+        É autocustodiante? S/N
+            Se não
+                Preencher CNPJ Custodiante
+        Scroll Down
+        Preencher Discriminação
+        Apagar Situação em 31/12/2023
+        Preencher Situação em 31/12/2024
+        Clicar em OK
+        
+    Se G = 08 e COD = 10
+        Preencher Localização
+            Se Localização != 105 - Brasil
+                Preencher Código Altcoin
+                É autocustodiante? S/N
+                    Se não
+                        Preencher CNPJ Custodiante
+                Scroll Down
+                Preencher Discriminação
+                Apagar Situação em 31/12/2023
+				Preencher Situação em 31/12/2024
+				Preencher Lucro ou Prejuízo em Aplicação Financeira
+				Preencher Imposto Pago no Exterior em Aplicação Financeira
+				Preencher Valor Recebido em Lucros e Dividendos
+				Preencher Imposto Pago Exterior em Lucros e Dividendos
+                Clicar em OK
+        Preencher Código Stablecoin
+        É autocustodiante? S/N
+            Se não
+                Preencher CNPJ Custodiante
+        Scroll Down
+        Preencher Discriminação
+        Apagar Situação em 31/12/2023
+        Preencher Situação em 31/12/2024
+        Clicar em OK
+
+    Se G = 08 e COD = 99
+        Preencher Localização
+            Se Localização != 105 - Brasil
+                Preencher Discriminação
+                Scroll Down
+                Apagar Situação em 31/12/2023
+				Preencher Situação em 31/12/2024
+				Preencher Lucro ou Prejuízo em Aplicação Financeira
+				Preencher Imposto Pago no Exterior em Aplicação Financeira
+				Preencher Valor Recebido em Lucros e Dividendos
+				Preencher Imposto Pago Exterior em Lucros e Dividendos
+                Clicar em OK
+        Preencher Discriminação
+        Scroll Down
+        Apagar Situação em 31/12/2023
+        Preencher Situação em 31/12/2024
+        Clicar em OK

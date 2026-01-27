@@ -1,4 +1,4 @@
-# Aslam Bot 1.0 to IRPF 2025
+# Fluxo principal
 
 import pywinauto, pyautogui, time
 import pandas as pd

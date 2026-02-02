@@ -1,3 +1,4 @@
 import testchild
 
-testchild.printarNumero()
+numero = 2
+testchild.printarNumero(numero)

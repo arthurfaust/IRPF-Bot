@@ -1,5 +1,3 @@
-# Fluxo principal
-
 import pywinauto, pyautogui, time
 import pandas as pd
 from pywinauto.keyboard import send_keys
@@ -149,8 +147,3 @@ def NovoLancamento():
 
         linhaAtual += 1
         print(linhaAtual)
-        
-AbrirIRPF()
-AbrirDeclaracaoCliente()
-AbrirBenseDireitos()
-NovoLancamento()

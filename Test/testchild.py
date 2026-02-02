@@ -1,5 +1,3 @@
-numero = 1
-
-def printarNumero():
+def printarNumero(numero):
     print(numero)
     

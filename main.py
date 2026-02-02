@@ -4,7 +4,7 @@ import pywinauto, pyautogui, time
 import pandas as pd
 from pywinauto.keyboard import send_keys
 
-df = pd.read_excel(r"C:\Users\Desktop\Desktop\IRPF-Bot\Test\InformeTeste.xlsx", header=None)
+df = pd.read_excel(r"C:\Users\Desktop\Desktop\IRPF-Bot\data\InformeTeste.xlsx", header=None)
 
 def AbrirIRPF():
     # Open Start Menu, search the IRPF program and open it
@@ -150,7 +150,6 @@ def NovoLancamento():
         linhaAtual += 1
         print(linhaAtual)
         
-
 AbrirIRPF()
 AbrirDeclaracaoCliente()
 AbrirBenseDireitos()

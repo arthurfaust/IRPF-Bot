@@ -1,0 +1,3 @@
+import testchild
+
+testchild.printarNumero()

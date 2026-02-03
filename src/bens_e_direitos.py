@@ -2,7 +2,8 @@ import pywinauto, pyautogui, time
 import pandas as pd
 from pywinauto.keyboard import send_keys
 
-df = pd.read_excel(r"C:\Users\Desktop\Desktop\IRPF-Bot\data\InformeTeste.xlsx", header=None)
+caminho = r"C:\Users\Desktop\Desktop\IRPF-Bot\data\dados.xlsx"
+df = pd.read_excel(caminho, header=None)
 
 def AbrirIRPF():
     # Open Start Menu, search the IRPF program and open it
@@ -60,7 +61,7 @@ def NovoLancamento():
     # Enquanto a linha atual for menor que o tamanho do dataframe
     while linhaAtual < len(df):
 
-        # Se a célula atual estiver vazia, para a automação
+        # Se a célula ATUAL estiver vazia, para a automação
         if pd.isna(df.iloc[linhaAtual, 0]):
             break
             
@@ -69,81 +70,159 @@ def NovoLancamento():
         LocalAtual = df.iloc[linhaAtual,2]
         DiscAtual = df.iloc[linhaAtual,4]
         Sit24 = df.iloc[linhaAtual,6]
+        LouP = "100,00"
+        ImpExt = "200,00"
+        ValorRecebido = "300,00"
+        ImpPagoExt = "400,00"
 
-        # Move o cursor para "Novo" e clica
-        time.sleep(0.5)
-        pyautogui.click(x=1105,y=665)
-
-        # Move o cursor para "Grupo" e digita o grupo atual
-        time.sleep(0.5)
-        pyautogui.click(x=630,y=300)
-        time.sleep(0.25)
-        send_keys(GrupoAtual)
-        time.sleep(0.25)
-        pyautogui.press('enter')
-
-        # Move o cursor para "Código" e digita o código atual
-        time.sleep(0.5)
-        pyautogui.click(x=630,y=355)
-        time.sleep(0.25)
-        send_keys(CodigoAtual)
-        time.sleep(0.25)
-        pyautogui.press('enter')
-
-        # Move o cursor para "Localização" e digita a loc atual
-        time.sleep(0.5)
-        pyautogui.click(x=630,y=455)
-        time.sleep(0.25)
-
-        for i in range(13):
-            pyautogui.press('backspace')
-
-        send_keys(LocalAtual, with_spaces=True)
-        time.sleep(0.5)
-        pyautogui.press('down')
-        pyautogui.press('enter')
+        if GrupoAtual == "08" and CodigoAtual == "01":
         
-        # Move o cursor para "Discriminação" e digita a disc atual
-        time.sleep(0.5)
-        pyautogui.click(x=630,y=650)
-        time.sleep(0.25)
-        send_keys(DiscAtual, with_spaces=True)
-        time.sleep(0.25)
-        pyautogui.press('enter')
+            # Move o cursor para "Novo" e clica
+            time.sleep(0.5)
+            pyautogui.click(x=1105,y=665)
 
-        # Scroll down
-        time.sleep(0.25)
-        pyautogui.moveTo(1348,380)
-        time.sleep(0.25)
-        pyautogui.dragTo(1348,520,1,button='left')
+            # Move o cursor para "Grupo" e digita o grupo atual
+            time.sleep(0.5)
+            pyautogui.click(x=630,y=300)
+            time.sleep(0.25)
+            send_keys(GrupoAtual)
+            time.sleep(0.25)
+            pyautogui.press('enter')
 
-        # Move o cursor para "Situação em 31/12/23"
-        time.sleep(0.25)
-        pyautogui.click(x=480,y=630)
-        time.sleep(0.25)
-        for i in range(4):
-            pyautogui.press('del')
-        time.sleep(0.25)
-        """
-        send_keys(Sit23)
-        time.sleep(0.25)
-        pyautogui.press('enter')
-        """
+            # Move o cursor para "Código" e digita o código atual
+            time.sleep(0.5)
+            pyautogui.click(x=630,y=355)
+            time.sleep(0.25)
+            send_keys(CodigoAtual)
+            time.sleep(0.25)
+            pyautogui.press('enter')
+
+            # Move o cursor para "Localização" e digita a loc atual
+            time.sleep(0.5)
+            pyautogui.click(x=630,y=455)
+            time.sleep(0.25)
+            for i in range(13):
+                pyautogui.press('backspace')
+            send_keys(LocalAtual, with_spaces=True)
+            time.sleep(0.5)
+            pyautogui.press('down')
+            pyautogui.press('enter')
         
-        # Move o cursor para "Situação em 31/12/24"
-        time.sleep(0.25)
-        pyautogui.click(x=665,y=630)
-        time.sleep(0.25)
-        for i in range(4):
-            pyautogui.press('del')
-        time.sleep(0.25)
-        send_keys(Sit24)
-        time.sleep(0.25)
-        pyautogui.press('enter')
+            # Move o cursor para "Discriminação" e digita a disc atual
+            time.sleep(0.5)
+            pyautogui.click(x=630,y=650)
+            time.sleep(0.25)
+            send_keys(DiscAtual, with_spaces=True)
+            time.sleep(0.25)
+            pyautogui.press('enter')
 
-        # Move o cursor para "Ok" e clica
-        time.sleep(0.25)
-        pyautogui.click(x=1100,y=710)
+            if LocalAtual != "105 - Brasil":
+                # Scroll down
+                time.sleep(0.25)
+                pyautogui.moveTo(1348,380)
+                time.sleep(0.25)
+                pyautogui.dragTo(1348,600,1,button='left')
+            
+                # Move o cursor para "Situação em 31/12/23"
+                time.sleep(0.25)
+                pyautogui.click(x=480,y=510)
+                time.sleep(0.25)
+                for i in range(4):
+                    pyautogui.press('del')
+                time.sleep(0.25)
+        
+                # Move o cursor para "Situação em 31/12/24"
+                time.sleep(0.25)
+                pyautogui.click(x=665,y=510)
+                time.sleep(0.25)
+                for i in range(4):
+                    pyautogui.press('del')
+                time.sleep(0.25)
+                send_keys(Sit24)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Move o cursor para "Lucro ou Prejuízo" em "Aplicação Financeira"
+                time.sleep(0.25)
+                pyautogui.click(x=490,y=630)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                time.sleep(0.25)
+                for i in range(4):
+                    pyautogui.press('del')
+                time.sleep(0.25)
+                send_keys(LouP)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Move o cursor para "Imposto pago no Exterior" em "Aplicação Financeira"
+                time.sleep(0.25)
+                pyautogui.click(x=665,y=630)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                time.sleep(0.25)
+                for i in range(4):
+                    pyautogui.press('del')
+                time.sleep(0.25)
+                send_keys(ImpExt)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Move o cursor para "Valor Recebido" em "Lucros e Dividendos"
+                time.sleep(0.25)
+                pyautogui.click(x=845,y=630)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                time.sleep(0.25)
+                for i in range(4):
+                    pyautogui.press('del')
+                time.sleep(0.25)
+                send_keys(ValorRecebido)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Move o cursor para "Imposto Pago Exterior" em "Lucros e Dividendos"
+                time.sleep(0.25)
+                pyautogui.click(x=1015,y=630)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                time.sleep(0.25)
+                for i in range(4):
+                    pyautogui.press('del')
+                time.sleep(0.25)
+                send_keys(ImpPagoExt)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+            else:
+                # Scroll down
+                time.sleep(0.25)
+                pyautogui.moveTo(1348,380)
+                time.sleep(0.25)
+                pyautogui.dragTo(1348,520,1,button='left')
+            
+                # Move o cursor para "Situação em 31/12/23"
+                time.sleep(0.25)
+                pyautogui.click(x=480,y=630)
+                time.sleep(0.25)
+                for i in range(4):
+                    pyautogui.press('del')
+                time.sleep(0.25)
+            
+                # Move o cursor para "Situação em 31/12/24"
+                time.sleep(0.25)
+                pyautogui.click(x=665,y=630)
+                time.sleep(0.25)
+                for i in range(4):
+                    pyautogui.press('del')
+                time.sleep(0.25)
+                send_keys(Sit24)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+            
+            # Move o cursor para "Ok" e clica
+            time.sleep(0.25)
+            pyautogui.click(x=1100,y=710)
 
         linhaAtual += 1
         print(linhaAtual)

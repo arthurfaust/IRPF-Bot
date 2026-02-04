@@ -2,9 +2,6 @@ import pywinauto, pyautogui, time
 import pandas as pd
 from pywinauto.keyboard import send_keys
 
-caminho = r"C:\Users\Desktop\Desktop\IRPF-Bot\data\dados.xlsx"
-df = pd.read_excel(caminho, header=None)
-
 def AbrirIRPF():
     # Open Start Menu, search the IRPF program and open it
     time.sleep(0.5)
@@ -14,8 +11,9 @@ def AbrirIRPF():
     time.sleep(0.5)
     pyautogui.press('enter')
     
-def AbrirDeclaracaoCliente():
+def AbrirDeclaracaoCliente(caminho):
     
+    df = pd.read_excel(caminho, header=None)
     nome = df.iloc[1,0]
     # Trigger para abrir a declaração do cliente
     # Cor do pixel de trigger (680,195) = (31, 47, 101)
@@ -54,7 +52,9 @@ def AbrirBenseDireitos():
 
             break
         
-def NovoLancamento():
+def NovoLancamento(caminho):
+    
+    df = pd.read_excel(caminho, header=None)
     linhaAtual = 18
     print(len(df))
     

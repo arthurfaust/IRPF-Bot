@@ -74,40 +74,41 @@ def NovoLancamento(caminho):
         ImpExt = "200,00"
         ValorRecebido = "300,00"
         ImpPagoExt = "400,00"
-
+        
+        # Move o cursor para "Novo" e clica
+        time.sleep(0.5)
+        pyautogui.click(x=1105,y=665)
+        
+        # Move o cursor para "Grupo" e digita o grupo atual
+        time.sleep(0.5)
+        pyautogui.click(x=630,y=300)
+        time.sleep(0.25)
+        send_keys(GrupoAtual)
+        time.sleep(0.25)
+        pyautogui.press('enter')
+        
+        # Move o cursor para "Código" e digita o código atual
+        time.sleep(0.25)
+        pyautogui.click(x=630,y=355)
+        time.sleep(0.25)
+        send_keys(CodigoAtual)
+        time.sleep(0.25)
+        pyautogui.press('enter')
+        
+        # Move o cursor para "Localização" e digita a loc atual
+        time.sleep(0.25)
+        pyautogui.click(x=630,y=455)
+        time.sleep(0.25)
+        send_keys('^A')
+        pyautogui.press('backspace')
+        time.sleep(0.25)
+        send_keys(LocalAtual, with_spaces=True)
+        time.sleep(0.25)
+        pyautogui.press('down')
+        pyautogui.press('enter')
+        
         if GrupoAtual == "08" and CodigoAtual == "01":
-        
-            # Move o cursor para "Novo" e clica
-            time.sleep(0.5)
-            pyautogui.click(x=1105,y=665)
-
-            # Move o cursor para "Grupo" e digita o grupo atual
-            time.sleep(0.5)
-            pyautogui.click(x=630,y=300)
-            time.sleep(0.25)
-            send_keys(GrupoAtual)
-            time.sleep(0.25)
-            pyautogui.press('enter')
-
-            # Move o cursor para "Código" e digita o código atual
-            time.sleep(0.5)
-            pyautogui.click(x=630,y=355)
-            time.sleep(0.25)
-            send_keys(CodigoAtual)
-            time.sleep(0.25)
-            pyautogui.press('enter')
-
-            # Move o cursor para "Localização" e digita a loc atual
-            time.sleep(0.5)
-            pyautogui.click(x=630,y=455)
-            time.sleep(0.25)
-            for i in range(13):
-                pyautogui.press('backspace')
-            send_keys(LocalAtual, with_spaces=True)
-            time.sleep(0.5)
-            pyautogui.press('down')
-            pyautogui.press('enter')
-        
+    
             # Move o cursor para "Discriminação" e digita a disc atual
             time.sleep(0.5)
             pyautogui.click(x=630,y=650)
@@ -127,16 +128,16 @@ def NovoLancamento(caminho):
                 time.sleep(0.25)
                 pyautogui.click(x=480,y=510)
                 time.sleep(0.25)
-                for i in range(4):
-                    pyautogui.press('del')
+                send_keys('^A')
+                pyautogui.press('backspace')
                 time.sleep(0.25)
         
                 # Move o cursor para "Situação em 31/12/24"
                 time.sleep(0.25)
                 pyautogui.click(x=665,y=510)
                 time.sleep(0.25)
-                for i in range(4):
-                    pyautogui.press('del')
+                send_keys('^A')
+                pyautogui.press('backspace')
                 time.sleep(0.25)
                 send_keys(Sit24)
                 time.sleep(0.25)
@@ -148,8 +149,8 @@ def NovoLancamento(caminho):
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 time.sleep(0.25)
-                for i in range(4):
-                    pyautogui.press('del')
+                send_keys('^A')
+                pyautogui.press('backspace')
                 time.sleep(0.25)
                 send_keys(LouP)
                 time.sleep(0.25)
@@ -161,8 +162,8 @@ def NovoLancamento(caminho):
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 time.sleep(0.25)
-                for i in range(4):
-                    pyautogui.press('del')
+                send_keys('^A')
+                pyautogui.press('backspace')
                 time.sleep(0.25)
                 send_keys(ImpExt)
                 time.sleep(0.25)
@@ -174,8 +175,8 @@ def NovoLancamento(caminho):
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 time.sleep(0.25)
-                for i in range(4):
-                    pyautogui.press('del')
+                send_keys('^A')
+                pyautogui.press('backspace')
                 time.sleep(0.25)
                 send_keys(ValorRecebido)
                 time.sleep(0.25)
@@ -187,8 +188,8 @@ def NovoLancamento(caminho):
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 time.sleep(0.25)
-                for i in range(4):
-                    pyautogui.press('del')
+                send_keys('^A')
+                pyautogui.press('backspace')
                 time.sleep(0.25)
                 send_keys(ImpPagoExt)
                 time.sleep(0.25)
@@ -205,16 +206,16 @@ def NovoLancamento(caminho):
                 time.sleep(0.25)
                 pyautogui.click(x=480,y=630)
                 time.sleep(0.25)
-                for i in range(4):
-                    pyautogui.press('del')
+                send_keys('^A')
+                pyautogui.press('backspace')
                 time.sleep(0.25)
             
                 # Move o cursor para "Situação em 31/12/24"
                 time.sleep(0.25)
                 pyautogui.click(x=665,y=630)
                 time.sleep(0.25)
-                for i in range(4):
-                    pyautogui.press('del')
+                send_keys('^A')
+                pyautogui.press('backspace')
                 time.sleep(0.25)
                 send_keys(Sit24)
                 time.sleep(0.25)

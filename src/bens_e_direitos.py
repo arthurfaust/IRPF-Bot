@@ -74,6 +74,7 @@ def NovoLancamento(caminho):
         ImpExt = "200,00"
         ValorRecebido = "300,00"
         ImpPagoExt = "400,00"
+        CodAltcoin = "ETH"
         
         # Move o cursor para "Novo" e clica
         time.sleep(0.5)
@@ -122,7 +123,7 @@ def NovoLancamento(caminho):
                 time.sleep(0.25)
                 pyautogui.moveTo(1348,380)
                 time.sleep(0.25)
-                pyautogui.dragTo(1348,600,1,button='left')
+                pyautogui.dragTo(1348,600,0.5,button='left')
             
                 # Move o cursor para "Situação em 31/12/23"
                 time.sleep(0.25)
@@ -224,6 +225,130 @@ def NovoLancamento(caminho):
             # Move o cursor para "Ok" e clica
             time.sleep(0.25)
             pyautogui.click(x=1100,y=710)
+            
+        elif GrupoAtual == "08" and CodigoAtual == "02":
+            
+            # Move o cursor para "Código Altcoin" e digita o cod atual
+            time.sleep(0.25)
+            pyautogui.click(x=630,y=520)
+            time.sleep(0.25)
+            send_keys(CodAltcoin, with_spaces=True)
+            time.sleep(0.25)
+            pyautogui.press('down')
+            pyautogui.press('enter')
+            
+            # Scroll down
+            time.sleep(0.25)
+            pyautogui.moveTo(1348,380)
+            time.sleep(0.25)
+            pyautogui.dragTo(1348,600,0.5,button='left')
+            
+            # Move o cursor para "Discriminação" e digita a disc atual
+            time.sleep(0.5)
+            pyautogui.click(x=630,y=500)
+            time.sleep(0.25)
+            send_keys(DiscAtual, with_spaces=True)
+            time.sleep(0.25)
+            pyautogui.press('enter')
+            
+            if LocalAtual != "105 - Brasil":
+                
+                # Move o cursor para "Situação em 31/12/23"
+                time.sleep(0.25)
+                pyautogui.click(x=480,y=510)
+                time.sleep(0.25)
+                send_keys('^A')
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+        
+                # Move o cursor para "Situação em 31/12/24"
+                time.sleep(0.25)
+                pyautogui.click(x=665,y=510)
+                time.sleep(0.25)
+                send_keys('^A')
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(Sit24)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Move o cursor para "Lucro ou Prejuízo" em "Aplicação Financeira"
+                time.sleep(0.25)
+                pyautogui.click(x=490,y=630)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                time.sleep(0.25)
+                send_keys('^A')
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(LouP)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Move o cursor para "Imposto pago no Exterior" em "Aplicação Financeira"
+                time.sleep(0.25)
+                pyautogui.click(x=665,y=630)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                time.sleep(0.25)
+                send_keys('^A')
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(ImpExt)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Move o cursor para "Valor Recebido" em "Lucros e Dividendos"
+                time.sleep(0.25)
+                pyautogui.click(x=845,y=630)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                time.sleep(0.25)
+                send_keys('^A')
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(ValorRecebido)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Move o cursor para "Imposto Pago Exterior" em "Lucros e Dividendos"
+                time.sleep(0.25)
+                pyautogui.click(x=1015,y=630)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                time.sleep(0.25)
+                send_keys('^A')
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(ImpPagoExt)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+            else:
+            
+                # Move o cursor para "Situação em 31/12/23"
+                time.sleep(0.25)
+                pyautogui.click(x=480,y=630)
+                time.sleep(0.25)
+                send_keys('^A')
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+            
+                # Move o cursor para "Situação em 31/12/24"
+                time.sleep(0.25)
+                pyautogui.click(x=665,y=630)
+                time.sleep(0.25)
+                send_keys('^A')
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(Sit24)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+            
+            # Move o cursor para "Ok" e clica
+            time.sleep(0.25)
+            pyautogui.click(x=1100,y=710)
+
 
         linhaAtual += 1
         print(linhaAtual)

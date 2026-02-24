@@ -225,7 +225,7 @@ def NovoLancamento(caminho):
             # Move o cursor para "Ok" e clica
             time.sleep(0.25)
             pyautogui.click(x=1100,y=710)
-            
+        
         elif GrupoAtual == "08" and CodigoAtual == "02":
             
             # Move o cursor para "Código Altcoin" e digita o cod atual
@@ -252,88 +252,17 @@ def NovoLancamento(caminho):
             pyautogui.press('enter')
             
             if LocalAtual != "105 - Brasil":
+                print("Operação Estrangeira")
+            else:
+                print("Operação Nacional")
                 
                 # Move o cursor para "Situação em 31/12/23"
-                time.sleep(0.25)
-                pyautogui.click(x=480,y=510)
-                time.sleep(0.25)
-                send_keys('^A')
-                pyautogui.press('backspace')
-                time.sleep(0.25)
-        
-                # Move o cursor para "Situação em 31/12/24"
-                time.sleep(0.25)
-                pyautogui.click(x=665,y=510)
-                time.sleep(0.25)
-                send_keys('^A')
-                pyautogui.press('backspace')
-                time.sleep(0.25)
-                send_keys(Sit24)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                
-                # Move o cursor para "Lucro ou Prejuízo" em "Aplicação Financeira"
                 time.sleep(0.25)
                 pyautogui.click(x=490,y=630)
                 time.sleep(0.25)
-                pyautogui.press('enter')
-                time.sleep(0.25)
                 send_keys('^A')
                 pyautogui.press('backspace')
-                time.sleep(0.25)
-                send_keys(LouP)
-                time.sleep(0.25)
-                pyautogui.press('enter')
                 
-                # Move o cursor para "Imposto pago no Exterior" em "Aplicação Financeira"
-                time.sleep(0.25)
-                pyautogui.click(x=665,y=630)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                time.sleep(0.25)
-                send_keys('^A')
-                pyautogui.press('backspace')
-                time.sleep(0.25)
-                send_keys(ImpExt)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                
-                # Move o cursor para "Valor Recebido" em "Lucros e Dividendos"
-                time.sleep(0.25)
-                pyautogui.click(x=845,y=630)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                time.sleep(0.25)
-                send_keys('^A')
-                pyautogui.press('backspace')
-                time.sleep(0.25)
-                send_keys(ValorRecebido)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                
-                # Move o cursor para "Imposto Pago Exterior" em "Lucros e Dividendos"
-                time.sleep(0.25)
-                pyautogui.click(x=1015,y=630)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                time.sleep(0.25)
-                send_keys('^A')
-                pyautogui.press('backspace')
-                time.sleep(0.25)
-                send_keys(ImpPagoExt)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                
-            else:
-            
-                # Move o cursor para "Situação em 31/12/23"
-                time.sleep(0.25)
-                pyautogui.click(x=480,y=630)
-                time.sleep(0.25)
-                send_keys('^A')
-                pyautogui.press('backspace')
-                time.sleep(0.25)
-            
                 # Move o cursor para "Situação em 31/12/24"
                 time.sleep(0.25)
                 pyautogui.click(x=665,y=630)
@@ -341,14 +270,11 @@ def NovoLancamento(caminho):
                 send_keys('^A')
                 pyautogui.press('backspace')
                 time.sleep(0.25)
-                send_keys(Sit24)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-            
-            # Move o cursor para "Ok" e clica
-            time.sleep(0.25)
-            pyautogui.click(x=1100,y=710)
-
+                send_keys(Sit24, with_spaces=True)
+        
+        # Move o cursor para "OK" e clica        
+        time.sleep(0.25)
+        pyautogui.click(x=1100,y=710)
 
         linhaAtual += 1
         print(linhaAtual)

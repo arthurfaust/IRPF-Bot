@@ -80,17 +80,15 @@ def NovoLancamento(caminho):
         time.sleep(0.5)
         pyautogui.click(x=1105,y=665)
         
-        # Move o cursor para "Grupo" e digita o grupo atual
-        time.sleep(0.5)
-        pyautogui.click(x=630,y=300)
+        # Fazer um trigger aqui para a transição de tela
+        
+        # Preenche o grupo atual
         time.sleep(0.25)
         send_keys(GrupoAtual)
         time.sleep(0.25)
         pyautogui.press('enter')
         
-        # Move o cursor para "Código" e digita o código atual
-        time.sleep(0.25)
-        pyautogui.click(x=630,y=355)
+        # Preenche o código atual
         time.sleep(0.25)
         send_keys(CodigoAtual)
         time.sleep(0.25)
@@ -105,9 +103,9 @@ def NovoLancamento(caminho):
         time.sleep(0.25)
         send_keys(LocalAtual, with_spaces=True)
         time.sleep(0.25)
-        pyautogui.press('down')
+        # pyautogui.press('down')
         pyautogui.press('enter')
-        
+        """""
         if GrupoAtual == "08" and CodigoAtual == "01":
     
             # Move o cursor para "Discriminação" e digita a disc atual
@@ -225,8 +223,8 @@ def NovoLancamento(caminho):
             # Move o cursor para "Ok" e clica
             time.sleep(0.25)
             pyautogui.click(x=1100,y=710)
-        
-        elif GrupoAtual == "08" and CodigoAtual == "02":
+        """
+        if GrupoAtual == "08" and CodigoAtual == "02":
             
             # Move o cursor para "Código Altcoin" e digita o cod atual
             time.sleep(0.25)
@@ -243,18 +241,30 @@ def NovoLancamento(caminho):
             time.sleep(0.25)
             pyautogui.dragTo(1348,600,0.5,button='left')
             
-            # Move o cursor para "Discriminação" e digita a disc atual
-            time.sleep(0.5)
-            pyautogui.click(x=630,y=500)
-            time.sleep(0.25)
-            send_keys(DiscAtual, with_spaces=True)
-            time.sleep(0.25)
-            pyautogui.press('enter')
-            
             if LocalAtual != "105 - Brasil":
                 print("Operação Estrangeira")
+                
+                # Move o cursor para "Discriminação" e digita a disc atual
+                time.sleep(0.5)
+                pyautogui.click(x=725,y=375)
+                time.sleep(0.25)
+                send_keys(DiscAtual, with_spaces=True)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                
+                
+                
             else:
                 print("Operação Nacional")
+                
+                # Move o cursor para "Discriminação" e digita a disc atual
+                time.sleep(0.5)
+                pyautogui.click(x=630,y=500)
+                time.sleep(0.25)
+                send_keys(DiscAtual, with_spaces=True)
+                time.sleep(0.25)
+                pyautogui.press('enter')
                 
                 # Move o cursor para "Situação em 31/12/23"
                 time.sleep(0.25)

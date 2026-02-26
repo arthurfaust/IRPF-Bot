@@ -57,12 +57,14 @@ def NovoLancamento(caminho):
     df = pd.read_excel(caminho, header=None)
     linhaAtual = 18
     print("Tamanho do dataframe: {}".format(len(df)))
+    print("Linha Atual: {}".format(linhaAtual))
     
     # Enquanto a linha atual for menor que o tamanho do dataframe
     while linhaAtual < len(df):
 
         # Se a célula ATUAL estiver vazia, para a automação
         if pd.isna(df.iloc[linhaAtual, 0]):
+            print("Célula vazia. Lançamento concluído.")
             break
             
         GrupoAtual = df.iloc[linhaAtual,0]
@@ -165,7 +167,7 @@ def NovoLancamento(caminho):
                 time.sleep(0.25)
                 pyautogui.press('backspace')
                 time.sleep(0.25)
-                send_keys(LucroOuPrejuizo)
+                send_keys(ImpostoExt)
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 
@@ -194,7 +196,7 @@ def NovoLancamento(caminho):
                 pyautogui.press('enter')
                 
                 # Dá OK e finaliza o lançamento
-                time.sleep(0.25)
+                time.sleep(0.25)        
                 pyautogui.press('enter')
                 
         linhaAtual += 1

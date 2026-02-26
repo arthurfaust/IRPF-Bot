@@ -56,16 +56,16 @@ def NovoLancamento(caminho):
     
     df = pd.read_excel(caminho, header=None)
     linhaAtual = 18
-    print("Tamanho do dataframe: {}".format(len(df)))
+    QuantidadeLinhas = len(df) - linhaAtual
+    
+    print("Quantidade lançamentos: {}".format(QuantidadeLinhas))
     print("Linha Atual: {}".format(linhaAtual))
     
     # Enquanto a linha atual for menor que o tamanho do dataframe
     while linhaAtual < len(df):
 
         # Se a célula ATUAL estiver vazia, para a automação
-        if pd.isna(df.iloc[linhaAtual, 0]):
-            print("Célula vazia. Lançamento concluído.")
-            break
+        if pd.isna(df.iloc[linhaAtual, 0]): break
             
         GrupoAtual = df.iloc[linhaAtual,0]
         CodigoAtual = df.iloc[linhaAtual,1]
@@ -401,4 +401,4 @@ def NovoLancamento(caminho):
         linhaAtual += 1
         print(linhaAtual
         """
-        
+    print("Lançamento finalizado.")

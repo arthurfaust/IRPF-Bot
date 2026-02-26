@@ -56,7 +56,7 @@ def NovoLancamento(caminho):
     
     df = pd.read_excel(caminho, header=None)
     linhaAtual = 18
-    print(len(df))
+    print("Tamanho do dataframe: {}".format(len(df)))
     
     # Enquanto a linha atual for menor que o tamanho do dataframe
     while linhaAtual < len(df):
@@ -70,10 +70,10 @@ def NovoLancamento(caminho):
         LocalAtual = df.iloc[linhaAtual,2]
         DiscAtual = df.iloc[linhaAtual,4]
         Sit24 = df.iloc[linhaAtual,6]
-        LouP = "100,00"
-        ImpExt = "200,00"
+        LucroOuPrejuizo = "100,00"
+        ImpostoExt = "200,00"
         ValorRecebido = "300,00"
-        ImpPagoExt = "400,00"
+        ImpostoPagoExt = "400,00"
         CodAltcoin = "ETH"
         
         # Move o cursor para "Novo" e clica
@@ -96,16 +96,126 @@ def NovoLancamento(caminho):
         
         # Move o cursor para "Localização" e digita a loc atual
         time.sleep(0.25)
-        pyautogui.click(x=630,y=455)
-        time.sleep(0.25)
         send_keys('^A')
         pyautogui.press('backspace')
         time.sleep(0.25)
         send_keys(LocalAtual, with_spaces=True)
         time.sleep(0.25)
-        # pyautogui.press('down')
         pyautogui.press('enter')
-        """""
+        
+        if GrupoAtual == "08" and CodigoAtual == "01":
+            if LocalAtual != "105 - Brasil":
+                # Dá OK no aviso
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Dá enter no autocustodiante
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche a discriminação
+                time.sleep(0.25)
+                send_keys(DiscAtual, with_spaces= True)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                """
+                # Scroll down
+                time.sleep(0.25)
+                pyautogui.moveTo(1348,380)
+                time.sleep(0.25)
+                pyautogui.dragTo(1348,600,0.5,button='left')
+                """
+                
+                # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
+                time.sleep(0.25)    
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche "Situação em 31/12/24" e vai para "Repetir"
+                time.sleep(0.25)    
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(Sit24)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Dá tab em "Repetir"
+                time.sleep(0.25)
+                pyautogui.press('tab')
+                
+                # OK no aviso
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche "Lucro ou Prejuízo"
+                time.sleep(0.25)
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(LucroOuPrejuizo)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # OK no aviso
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche "Imposto pago no Exterior"
+                time.sleep(0.25)
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(LucroOuPrejuizo)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # OK no aviso
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche "Valor Recebido"
+                time.sleep(0.25)
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(ValorRecebido)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # OK no aviso
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche "Imposto Pago no Exterior"
+                time.sleep(0.25)
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(ImpostoPagoExt)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Dá OK e finaliza o lançamento
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+        linhaAtual += 1
+        print("Linha Atual: {}".format(linhaAtual))
+                
+        """
+        if GrupoAtual == "08" and CodigoAtual == "01":
+        
+            # Vai para "É autocustodiante?"
+            time.sleep(0.25)
+            pyautogui.press('enter')
+        
+            # Vai para "CNPJ custodiante"
+            time.sleep(0.25)
+            pyautogui.press('enter')
+        
+            # Preenche a discriminação
+        
+        
+            pyautogui.press('enter')
+    
         if GrupoAtual == "08" and CodigoAtual == "01":
     
             # Move o cursor para "Discriminação" e digita a disc atual
@@ -223,7 +333,7 @@ def NovoLancamento(caminho):
             # Move o cursor para "Ok" e clica
             time.sleep(0.25)
             pyautogui.click(x=1100,y=710)
-        """
+            
         if GrupoAtual == "08" and CodigoAtual == "02":
             
             # Move o cursor para "Código Altcoin" e digita o cod atual
@@ -287,4 +397,6 @@ def NovoLancamento(caminho):
         pyautogui.click(x=1100,y=710)
 
         linhaAtual += 1
-        print(linhaAtual)
+        print(linhaAtual
+        """
+        

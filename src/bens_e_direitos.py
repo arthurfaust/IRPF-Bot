@@ -235,207 +235,143 @@ def NovoLancamento(caminho):
                 # Dá OK e finaliza o lançamento
                 time.sleep(0.25)
                 pyautogui.press('enter')
-                
-        linhaAtual += 1
-        print("Linha Atual: {}".format(linhaAtual))
-                
-        """
-        if GrupoAtual == "08" and CodigoAtual == "01":
         
-            # Vai para "É autocustodiante?"
-            time.sleep(0.25)
-            pyautogui.press('enter')
-        
-            # Vai para "CNPJ custodiante"
-            time.sleep(0.25)
-            pyautogui.press('enter')
-        
-            # Preenche a discriminação
-        
-        
-            pyautogui.press('enter')
-    
-        if GrupoAtual == "08" and CodigoAtual == "01":
-    
-            # Move o cursor para "Discriminação" e digita a disc atual
-            time.sleep(0.5)
-            pyautogui.click(x=630,y=650)
-            time.sleep(0.25)
-            send_keys(DiscAtual, with_spaces=True)
-            time.sleep(0.25)
-            pyautogui.press('enter')
-
+        if GrupoAtual == "08" and CodigoAtual == "02":
             if LocalAtual != "105 - Brasil":
-                # Scroll down
+                
+                # Dá OK no aviso
                 time.sleep(0.25)
-                pyautogui.moveTo(1348,380)
+                pyautogui.press('enter')
+                
+                # Preenche "Código Altcoin"
                 time.sleep(0.25)
-                pyautogui.dragTo(1348,600,0.5,button='left')
-            
-                # Move o cursor para "Situação em 31/12/23"
+                send_keys(CodAltcoin)
                 time.sleep(0.25)
-                pyautogui.click(x=480,y=510)
+                pyautogui.press('enter')
+                
+                # Dá enter em "autocustodiante?"
                 time.sleep(0.25)
-                send_keys('^A')
+                pyautogui.press('enter')
+                
+                # Preenche "Discriminação"
+                time.sleep(0.25)
+                send_keys(DiscAtual, with_spaces = True)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
+                time.sleep(0.25)    
                 pyautogui.press('backspace')
                 time.sleep(0.25)
-        
-                # Move o cursor para "Situação em 31/12/24"
-                time.sleep(0.25)
-                pyautogui.click(x=665,y=510)
-                time.sleep(0.25)
-                send_keys('^A')
+                pyautogui.press('enter')
+                
+                # Preenche "Situação em 31/12/24" e vai para "Repetir"
+                time.sleep(0.25)    
                 pyautogui.press('backspace')
                 time.sleep(0.25)
                 send_keys(Sit24)
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 
-                # Move o cursor para "Lucro ou Prejuízo" em "Aplicação Financeira"
+                # Dá tab em "Repetir"
                 time.sleep(0.25)
-                pyautogui.click(x=490,y=630)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                time.sleep(0.25)
-                send_keys('^A')
-                pyautogui.press('backspace')
-                time.sleep(0.25)
-                send_keys(LouP)
+                pyautogui.press('tab')
+                
+                # OK no aviso
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 
-                # Move o cursor para "Imposto pago no Exterior" em "Aplicação Financeira"
+                # Preenche "Lucro ou Prejuízo"
                 time.sleep(0.25)
-                pyautogui.click(x=665,y=630)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                time.sleep(0.25)
-                send_keys('^A')
                 pyautogui.press('backspace')
                 time.sleep(0.25)
-                send_keys(ImpExt)
+                send_keys(LucroOuPrejuizo)
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 
-                # Move o cursor para "Valor Recebido" em "Lucros e Dividendos"
-                time.sleep(0.25)
-                pyautogui.click(x=845,y=630)
+                # OK no aviso
                 time.sleep(0.25)
                 pyautogui.press('enter')
+                
+                # Preenche "Imposto pago no Exterior"
                 time.sleep(0.25)
-                send_keys('^A')
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(ImpostoExt)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # OK no aviso
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche "Valor Recebido"
+                time.sleep(0.25)
                 pyautogui.press('backspace')
                 time.sleep(0.25)
                 send_keys(ValorRecebido)
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 
-                # Move o cursor para "Imposto Pago Exterior" em "Lucros e Dividendos"
-                time.sleep(0.25)
-                pyautogui.click(x=1015,y=630)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                time.sleep(0.25)
-                send_keys('^A')
-                pyautogui.press('backspace')
-                time.sleep(0.25)
-                send_keys(ImpPagoExt)
+                # OK no aviso
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 
-            else:
-                # Scroll down
+                # Preenche "Imposto Pago no Exterior"
                 time.sleep(0.25)
-                pyautogui.moveTo(1348,380)
-                time.sleep(0.25)
-                pyautogui.dragTo(1348,520,1,button='left')
-            
-                # Move o cursor para "Situação em 31/12/23"
-                time.sleep(0.25)
-                pyautogui.click(x=480,y=630)
-                time.sleep(0.25)
-                send_keys('^A')
                 pyautogui.press('backspace')
                 time.sleep(0.25)
-            
-                # Move o cursor para "Situação em 31/12/24"
+                send_keys(ImpostoPagoExt)
                 time.sleep(0.25)
-                pyautogui.click(x=665,y=630)
+                pyautogui.press('enter')
+                
+                # Dá OK e finaliza o lançamento
+                time.sleep(0.25)        
+                pyautogui.press('enter')
+               
+            else:
+                # Preenche "Código Altcoin"
                 time.sleep(0.25)
-                send_keys('^A')
+                send_keys(CodAltcoin)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Dá enter em "autocustodiante?"
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Dá enter em "CNPJ Custodiante"
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche "Discriminação"
+                time.sleep(0.25)
+                send_keys(DiscAtual, with_spaces = True)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
+                time.sleep(0.25)    
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche "Situação em 31/12/24"
+                time.sleep(0.25)    
                 pyautogui.press('backspace')
                 time.sleep(0.25)
                 send_keys(Sit24)
                 time.sleep(0.25)
                 pyautogui.press('enter')
-            
-            # Move o cursor para "Ok" e clica
-            time.sleep(0.25)
-            pyautogui.click(x=1100,y=710)
-            
-        if GrupoAtual == "08" and CodigoAtual == "02":
-            
-            # Move o cursor para "Código Altcoin" e digita o cod atual
-            time.sleep(0.25)
-            pyautogui.click(x=630,y=520)
-            time.sleep(0.25)
-            send_keys(CodAltcoin, with_spaces=True)
-            time.sleep(0.25)
-            pyautogui.press('down')
-            pyautogui.press('enter')
-            
-            # Scroll down
-            time.sleep(0.25)
-            pyautogui.moveTo(1348,380)
-            time.sleep(0.25)
-            pyautogui.dragTo(1348,600,0.5,button='left')
-            
-            if LocalAtual != "105 - Brasil":
-                print("Operação Estrangeira")
                 
-                # Move o cursor para "Discriminação" e digita a disc atual
-                time.sleep(0.5)
-                pyautogui.click(x=725,y=375)
+                # Dá tab em "Repetir"
                 time.sleep(0.25)
-                send_keys(DiscAtual, with_spaces=True)
+                pyautogui.press('tab')
+                
+                # Dá OK e finaliza o lançamento
                 time.sleep(0.25)
                 pyautogui.press('enter')
                 
-                
-                
-                
-            else:
-                print("Operação Nacional")
-                
-                # Move o cursor para "Discriminação" e digita a disc atual
-                time.sleep(0.5)
-                pyautogui.click(x=630,y=500)
-                time.sleep(0.25)
-                send_keys(DiscAtual, with_spaces=True)
-                time.sleep(0.25)
-                pyautogui.press('enter')
-                
-                # Move o cursor para "Situação em 31/12/23"
-                time.sleep(0.25)
-                pyautogui.click(x=490,y=630)
-                time.sleep(0.25)
-                send_keys('^A')
-                pyautogui.press('backspace')
-                
-                # Move o cursor para "Situação em 31/12/24"
-                time.sleep(0.25)
-                pyautogui.click(x=665,y=630)
-                time.sleep(0.25)
-                send_keys('^A')
-                pyautogui.press('backspace')
-                time.sleep(0.25)
-                send_keys(Sit24, with_spaces=True)
-        
-        # Move o cursor para "OK" e clica        
-        time.sleep(0.25)
-        pyautogui.click(x=1100,y=710)
-
         linhaAtual += 1
-        print(linhaAtual
-        """
+        print("Linha Atual: {}".format(linhaAtual))
     print("Lançamento finalizado.")

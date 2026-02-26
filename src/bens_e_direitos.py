@@ -85,7 +85,7 @@ def NovoLancamento(caminho):
         # Fazer um trigger aqui para a transição de tela
         
         # Preenche o grupo atual
-        time.sleep(0.25)
+        time.sleep(0.5)
         send_keys(GrupoAtual)
         time.sleep(0.25)
         pyautogui.press('enter')
@@ -197,6 +197,43 @@ def NovoLancamento(caminho):
                 
                 # Dá OK e finaliza o lançamento
                 time.sleep(0.25)        
+                pyautogui.press('enter')
+            
+            else:
+                # Dá enter no autocustodiante
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Dá enter no CNPJ do custodiante
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche a discriminação
+                time.sleep(0.25)
+                send_keys(DiscAtual, with_spaces= True)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
+                time.sleep(0.25)    
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Preenche "Situação em 31/12/24" e vai para "Repetir"
+                time.sleep(0.25)    
+                pyautogui.press('backspace')
+                time.sleep(0.25)
+                send_keys(Sit24)
+                time.sleep(0.25)
+                pyautogui.press('enter')
+                
+                # Dá tab em "Repetir"
+                time.sleep(0.25)
+                pyautogui.press('tab')
+                
+                # Dá OK e finaliza o lançamento
+                time.sleep(0.25)
                 pyautogui.press('enter')
                 
         linhaAtual += 1

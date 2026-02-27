@@ -78,6 +78,7 @@ def NovoLancamento(caminho):
         imposto_pago_ext = "400,00"
         codigo_altcoin = "ETH"
         codigo_stablecoin = "USDT"
+        cnpj_atual = "28640024000124"
         tempo_menor = 0.5
         tempo_maior = 0.5
         
@@ -99,7 +100,7 @@ def NovoLancamento(caminho):
         time.sleep(tempo_menor)
         pyautogui.press('enter')
         
-        # Move o cursor para "Localização" e digita a loc atual
+        # Preenche a localização atual
         time.sleep(tempo_menor)
         send_keys('^A')
         pyautogui.press('backspace')
@@ -108,6 +109,139 @@ def NovoLancamento(caminho):
         time.sleep(tempo_menor)
         pyautogui.press('enter')
         
+        if grupo_atual == "03" and codigo_atual == "01":
+            if local_atual != "105 - Brasil":
+                # Dá OK no aviso
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche a discriminação
+                time.sleep(tempo_menor)
+                send_keys(disc_atual, with_spaces= True)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Dá enter em "Negociados na bolsa?"
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Apaga "Situação em 31/12/23"
+                time.sleep(tempo_menor)    
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Situação em 31/12/24"
+                time.sleep(tempo_menor)    
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(sit_24)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Dá tab em "Repetir"
+                time.sleep(tempo_menor)
+                pyautogui.press('tab')
+                
+                # OK no aviso
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Lucro ou Prejuízo"
+                time.sleep(tempo_menor)
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(lucro_ou_prejuizo)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # OK no aviso
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Imposto pago no Exterior"
+                time.sleep(tempo_menor)
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(imposto_ext)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # OK no aviso
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Valor Recebido"
+                time.sleep(tempo_menor)
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(valor_recebido)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # OK no aviso
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Imposto Pago no Exterior"
+                time.sleep(tempo_menor)
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(imposto_pago_ext)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Dá OK e finaliza o lançamento
+                time.sleep(tempo_menor)        
+                pyautogui.press('enter')
+                
+            else:
+                # Preenche o CNPJ
+                time.sleep(tempo_menor)
+                send_keys(cnpj_atual)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche a discriminação
+                time.sleep(tempo_menor)
+                send_keys(disc_atual, with_spaces= True)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Dá enter em "Negociados na bolsa?"
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Apaga "Situação em 31/12/23"
+                time.sleep(tempo_menor)    
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Situação em 31/12/24"
+                time.sleep(tempo_menor)    
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(sit_24)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Dá tab em "Repetir"
+                time.sleep(tempo_menor)
+                pyautogui.press('tab')
+                
+                # Dá tab em "Informar Rendimento Isento"
+                time.sleep(tempo_menor)
+                pyautogui.press('tab')
+                
+                # Dá tab em "Informar Rendimento Exclusivo"
+                time.sleep(tempo_menor)
+                pyautogui.press('tab')
+                
+                # Dá OK e finaliza o lançamento
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                  
         if (grupo_atual == "08" and codigo_atual == "01") or (grupo_atual == "08" and codigo_atual == "10"):
             if local_atual != "105 - Brasil":
                 # Dá OK no aviso
@@ -123,14 +257,6 @@ def NovoLancamento(caminho):
                 send_keys(disc_atual, with_spaces= True)
                 time.sleep(tempo_menor)
                 pyautogui.press('enter')
-                
-                """
-                # Scroll down
-                time.sleep(tempo_menor)
-                pyautogui.moveTo(1348,380)
-                time.sleep(tempo_menoro_menor)
-                pyautogui.dragTo(1348,600,0.5,button='left')
-                """
                 
                 # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
                 time.sleep(tempo_menor)    

@@ -4,7 +4,7 @@ import pywinauto, pyautogui, time, bens_e_direitos
 import pandas as pd
 from pywinauto.keyboard import send_keys
 
-caminho = r"C:\Users\Desktop\Desktop\IRPF-Bot\test\TesteCod-08-Completo.xlsx"
+caminho = r"C:\Users\Desktop\Desktop\IRPF-Bot\test\TesteCod-03-01.xlsx"
 
 bens_e_direitos.AbrirIRPF()
 bens_e_direitos.AbrirDeclaracaoCliente(caminho)

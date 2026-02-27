@@ -510,7 +510,119 @@ def NovoLancamento(caminho):
                 # Dá OK e finaliza o lançamento
                 time.sleep(tempo_menor)
                 pyautogui.press('enter')
+        
+        if grupo_atual == "08" and codigo_atual == "99":
+            if local_atual != "105 - Brasil":
+                # Dá OK no aviso
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
                 
+                # Preenche a discriminação
+                time.sleep(tempo_menor)
+                send_keys(disc_atual, with_spaces= True)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
+                time.sleep(tempo_menor)    
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Situação em 31/12/24" e vai para "Repetir"
+                time.sleep(tempo_menor)    
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(sit_24)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Dá tab em "Repetir"
+                time.sleep(tempo_menor)
+                pyautogui.press('tab')
+                
+                # OK no aviso
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Lucro ou Prejuízo"
+                time.sleep(tempo_menor)
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(lucro_ou_prejuizo)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # OK no aviso
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Imposto pago no Exterior"
+                time.sleep(tempo_menor)
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(imposto_ext)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # OK no aviso
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Valor Recebido"
+                time.sleep(tempo_menor)
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(valor_recebido)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # OK no aviso
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Imposto Pago no Exterior"
+                time.sleep(tempo_menor)
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(imposto_pago_ext)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Dá OK e finaliza o lançamento
+                time.sleep(tempo_menor)        
+                pyautogui.press('enter')
+            
+            else:
+                
+                # Preenche a discriminação
+                time.sleep(tempo_menor)
+                send_keys(disc_atual, with_spaces= True)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
+                time.sleep(tempo_menor)    
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Preenche "Situação em 31/12/24" e vai para "Repetir"
+                time.sleep(tempo_menor)    
+                pyautogui.press('backspace')
+                time.sleep(tempo_menor)
+                send_keys(sit_24)
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+                
+                # Dá tab em "Repetir"
+                time.sleep(tempo_menor)
+                pyautogui.press('tab')
+                
+                # Dá OK e finaliza o lançamento
+                time.sleep(tempo_menor)
+                pyautogui.press('enter')
+        
         linha_atual += 1
         print("Linha Atual: {}".format(linha_atual))
     print("Lançamento finalizado.")

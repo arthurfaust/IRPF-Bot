@@ -295,6 +295,49 @@ def NovoLancamento(caminho):
             time.sleep(tempo_menor)
             send_keys('{ENTER}')
             
+        if grupo_atual == "07" and codigo_atual == "07":
+            # Preenche o CNPJ do fundo
+            time.sleep(tempo_menor)
+            send_keys(cnpj_atual)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Preenche a discriminação
+            time.sleep(tempo_menor)
+            send_keys(disc_atual, with_spaces= True)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Dá enter em "Negociados na bolsa?"
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Apaga "Situação em 31/12/23"
+            time.sleep(tempo_menor)    
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # Preenche "Situação em 31/12/24"
+            time.sleep(tempo_menor)    
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(sit_24)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # Dá tab em "Repetir"
+            time.sleep(tempo_menor)
+            send_keys('{TAB}')
+                
+            # Dá tab em "Informar Rendimento Exclusivo"
+            time.sleep(tempo_menor)
+            send_keys('{TAB}')
+                
+            # Dá OK e finaliza o lançamento
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+        
         if (grupo_atual == "08" and codigo_atual == "01") or (grupo_atual == "08" and codigo_atual == "10"):
             # Preenche a localização atual
             time.sleep(tempo_menor)

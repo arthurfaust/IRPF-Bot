@@ -295,7 +295,7 @@ def NovoLancamento(caminho):
             time.sleep(tempo_menor)
             send_keys('{ENTER}')
             
-        if grupo_atual == "07" and codigo_atual == "07":
+        if (grupo_atual == "07" and codigo_atual == "07") or (grupo_atual == "07" and codigo_atual == "08") :
             # Preenche o CNPJ do fundo
             time.sleep(tempo_menor)
             send_keys(cnpj_atual)

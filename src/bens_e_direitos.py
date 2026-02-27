@@ -5,9 +5,9 @@ from pywinauto.keyboard import send_keys
 def AbrirIRPF():
     # Open Start Menu, search the IRPF program and open it
     time.sleep(0.5)
-    send_keys("{VK_LWIN}")
+    send_keys('{VK_LWIN}')
     time.sleep(0.5)
-    send_keys("IRPF2025")
+    send_keys('IRPF2025')
     time.sleep(0.5)
     send_keys('{ENTER}')
     
@@ -22,7 +22,7 @@ def AbrirDeclaracaoCliente(caminho):
             
             # Move para "Em Preenchimento"
             time.sleep(0.5)
-            send_keys("%e")
+            send_keys('%e')
             
             # Move para a barra de pesquisa e procura o nome do cliente
             time.sleep(0.5)
@@ -102,18 +102,20 @@ def NovoLancamento(caminho):
         time.sleep(tempo_menor)
         send_keys(codigo_atual)
         time.sleep(tempo_menor)
-        send_keys('{ENTER}')
-        
-        # Preenche a localização atual
-        time.sleep(tempo_menor)
-        send_keys('^A')
-        send_keys('{BACKSPACE}')
-        time.sleep(tempo_menor)
-        send_keys(local_atual, with_spaces=True)
+        send_keys('{DOWN}')
         time.sleep(tempo_menor)
         send_keys('{ENTER}')
         
         if grupo_atual == "03" and codigo_atual == "01":
+            # Preenche a localização atual
+            time.sleep(tempo_menor)
+            send_keys('^A')
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(local_atual, with_spaces=True)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             if local_atual != "105 - Brasil":
                 # Dá OK no aviso
                 time.sleep(tempo_menor)
@@ -247,10 +249,62 @@ def NovoLancamento(caminho):
                 send_keys('{ENTER}')
          
         if grupo_atual == "07" and codigo_atual == "03":
-            if local_atual != "105 - Brasil":
-                print("Hello World")
-                 
+            # Preenche o CNPJ do fundo
+            time.sleep(tempo_menor)
+            send_keys(cnpj_atual)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Preenche a discriminação
+            time.sleep(tempo_menor)
+            send_keys(disc_atual, with_spaces= True)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Dá enter em "Negociados na bolsa?"
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Apaga "Situação em 31/12/23"
+            time.sleep(tempo_menor)    
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # Preenche "Situação em 31/12/24"
+            time.sleep(tempo_menor)    
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(sit_24)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # Dá tab em "Repetir"
+            time.sleep(tempo_menor)
+            send_keys('{TAB}')
+                
+            # Dá tab em "Informar Rendimento Isento"
+            time.sleep(tempo_menor)
+            send_keys('{TAB}')
+                
+            # Dá tab em "Informar Rendimento Exclusivo"
+            time.sleep(tempo_menor)
+            send_keys('{TAB}')
+                
+            # Dá OK e finaliza o lançamento
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
         if (grupo_atual == "08" and codigo_atual == "01") or (grupo_atual == "08" and codigo_atual == "10"):
+            # Preenche a localização atual
+            time.sleep(tempo_menor)
+            send_keys('^A')
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(local_atual, with_spaces=True)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             if local_atual != "105 - Brasil":
                 # Dá OK no aviso
                 time.sleep(tempo_menor)
@@ -374,6 +428,15 @@ def NovoLancamento(caminho):
                 send_keys('{ENTER}')
         
         if grupo_atual == "08" and codigo_atual == "02":
+            # Preenche a localização atual
+            time.sleep(tempo_menor)
+            send_keys('^A')
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(local_atual, with_spaces=True)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             if local_atual != "105 - Brasil":
                 
                 # Dá OK no aviso
@@ -510,6 +573,15 @@ def NovoLancamento(caminho):
                 send_keys('{ENTER}')
                 
         if grupo_atual == "08" and codigo_atual == "03":
+            # Preenche a localização atual
+            time.sleep(tempo_menor)
+            send_keys('^A')
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(local_atual, with_spaces=True)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             if local_atual != "105 - Brasil":
                 
                 # Dá OK no aviso
@@ -646,6 +718,15 @@ def NovoLancamento(caminho):
                 send_keys('{ENTER}')
         
         if grupo_atual == "08" and codigo_atual == "99":
+            # Preenche a localização atual
+            time.sleep(tempo_menor)
+            send_keys('^A')
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(local_atual, with_spaces=True)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             if local_atual != "105 - Brasil":
                 # Dá OK no aviso
                 time.sleep(tempo_menor)

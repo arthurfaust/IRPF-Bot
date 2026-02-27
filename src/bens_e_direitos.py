@@ -78,435 +78,437 @@ def NovoLancamento(caminho):
         imposto_pago_ext = "400,00"
         codigo_altcoin = "ETH"
         codigo_stablecoin = "USDT"
+        tempo_menor = 0.5
+        tempo_maior = 0.5
         
         # Move o cursor para "Novo" e clica
-        time.sleep(0.5)
+        time.sleep(tempo_maior)
         pyautogui.click(x=1105,y=665)
         
         # Fazer um trigger aqui para a transição de tela
         
         # Preenche o grupo atual
-        time.sleep(0.5)
+        time.sleep(tempo_maior)
         send_keys(grupo_atual)
-        time.sleep(0.25)
+        time.sleep(tempo_menor)
         pyautogui.press('enter')
         
         # Preenche o código atual
-        time.sleep(0.25)
+        time.sleep(tempo_menor)
         send_keys(codigo_atual)
-        time.sleep(0.25)
+        time.sleep(tempo_menor)
         pyautogui.press('enter')
         
         # Move o cursor para "Localização" e digita a loc atual
-        time.sleep(0.25)
+        time.sleep(tempo_menor)
         send_keys('^A')
         pyautogui.press('backspace')
-        time.sleep(0.25)
+        time.sleep(tempo_menor)
         send_keys(local_atual, with_spaces=True)
-        time.sleep(0.25)
+        time.sleep(tempo_menor)
         pyautogui.press('enter')
         
         if (grupo_atual == "08" and codigo_atual == "01") or (grupo_atual == "08" and codigo_atual == "10"):
             if local_atual != "105 - Brasil":
                 # Dá OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá enter no autocustodiante
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche a discriminação
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(disc_atual, with_spaces= True)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 """
                 # Scroll down
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.moveTo(1348,380)
-                time.sleep(0.25)
+                time.sleep(tempo_menoro_menor)
                 pyautogui.dragTo(1348,600,0.5,button='left')
                 """
                 
                 # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Situação em 31/12/24" e vai para "Repetir"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(sit_24)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá tab em "Repetir"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('tab')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Lucro ou Prejuízo"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(lucro_ou_prejuizo)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Imposto pago no Exterior"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(imposto_ext)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Valor Recebido"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(valor_recebido)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Imposto Pago no Exterior"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(imposto_pago_ext)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá OK e finaliza o lançamento
-                time.sleep(0.25)        
+                time.sleep(tempo_menor)        
                 pyautogui.press('enter')
             
             else:
                 # Dá enter no autocustodiante
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá enter no CNPJ do custodiante
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche a discriminação
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(disc_atual, with_spaces= True)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Situação em 31/12/24" e vai para "Repetir"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(sit_24)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá tab em "Repetir"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('tab')
                 
                 # Dá OK e finaliza o lançamento
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
         
         if grupo_atual == "08" and codigo_atual == "02":
             if local_atual != "105 - Brasil":
                 
                 # Dá OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Código Altcoin"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(codigo_altcoin)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá enter em "autocustodiante?"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Discriminação"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(disc_atual, with_spaces = True)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Situação em 31/12/24" e vai para "Repetir"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(sit_24)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá tab em "Repetir"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('tab')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Lucro ou Prejuízo"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(lucro_ou_prejuizo)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Imposto pago no Exterior"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(imposto_ext)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Valor Recebido"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(valor_recebido)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Imposto Pago no Exterior"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(imposto_pago_ext)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá OK e finaliza o lançamento
-                time.sleep(0.25)        
+                time.sleep(tempo_menor)        
                 pyautogui.press('enter')
                
             else:
                 # Preenche "Código Altcoin"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(codigo_altcoin)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá enter em "autocustodiante?"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá enter em "CNPJ Custodiante"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Discriminação"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(disc_atual, with_spaces = True)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Situação em 31/12/24"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(sit_24)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá tab em "Repetir"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('tab')
                 
                 # Dá OK e finaliza o lançamento
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
         if grupo_atual == "08" and codigo_atual == "03":
             if local_atual != "105 - Brasil":
                 
                 # Dá OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Código Altcoin"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(codigo_stablecoin)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá enter em "autocustodiante?"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Discriminação"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(disc_atual, with_spaces = True)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Situação em 31/12/24" e vai para "Repetir"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(sit_24)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá tab em "Repetir"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('tab')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Lucro ou Prejuízo"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(lucro_ou_prejuizo)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Imposto pago no Exterior"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(imposto_ext)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Valor Recebido"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(valor_recebido)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # OK no aviso
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Imposto Pago no Exterior"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(imposto_pago_ext)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá OK e finaliza o lançamento
-                time.sleep(0.25)        
+                time.sleep(tempo_menor)        
                 pyautogui.press('enter')
                
             else:
                 # Preenche "Código Altcoin"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(codigo_stablecoin)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá enter em "autocustodiante?"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá enter em "CNPJ Custodiante"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Discriminação"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(disc_atual, with_spaces = True)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Apaga "Situação em 31/12/23" e vai para "Situação em 31/12/24"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Preenche "Situação em 31/12/24"
-                time.sleep(0.25)    
+                time.sleep(tempo_menor)    
                 pyautogui.press('backspace')
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 send_keys(sit_24)
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
                 # Dá tab em "Repetir"
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('tab')
                 
                 # Dá OK e finaliza o lançamento
-                time.sleep(0.25)
+                time.sleep(tempo_menor)
                 pyautogui.press('enter')
                 
         linha_atual += 1

@@ -98,15 +98,15 @@ def NovoLancamento(caminho):
         time.sleep(tempo_menor)
         send_keys('{ENTER}')
         
-        # Preenche o código atual
-        time.sleep(tempo_menor)
-        send_keys(codigo_atual)
-        time.sleep(tempo_menor)
-        send_keys('{DOWN}')
-        time.sleep(tempo_menor)
-        send_keys('{ENTER}')
-        
         if grupo_atual == "03" and codigo_atual == "01":
+            # Preenche o código atual
+            time.sleep(tempo_menor)
+            send_keys(codigo_atual)
+            time.sleep(tempo_menor)
+            send_keys('{DOWN}')
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             # Preenche a localização atual
             time.sleep(tempo_menor)
             send_keys('^A')
@@ -249,6 +249,14 @@ def NovoLancamento(caminho):
                 send_keys('{ENTER}')
          
         if grupo_atual == "07" and codigo_atual == "03":
+            # Preenche o código atual
+            time.sleep(tempo_menor)
+            send_keys(codigo_atual)
+            time.sleep(tempo_menor)
+            send_keys('{DOWN}')
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             # Preenche o CNPJ do fundo
             time.sleep(tempo_menor)
             send_keys(cnpj_atual)
@@ -296,6 +304,14 @@ def NovoLancamento(caminho):
             send_keys('{ENTER}')
             
         if (grupo_atual == "07" and codigo_atual == "07") or (grupo_atual == "07" and codigo_atual == "08") :
+            # Preenche o código atual
+            time.sleep(tempo_menor)
+            send_keys(codigo_atual)
+            time.sleep(tempo_menor)
+            send_keys('{DOWN}')
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             # Preenche o CNPJ do fundo
             time.sleep(tempo_menor)
             send_keys(cnpj_atual)
@@ -338,7 +354,120 @@ def NovoLancamento(caminho):
             time.sleep(tempo_menor)
             send_keys('{ENTER}')
         
+        if grupo_atual == "07" and codigo_atual == "99":
+            # Preenche o código atual
+            time.sleep(tempo_menor)
+            send_keys(codigo_atual)
+            time.sleep(tempo_menor)
+            
+            for i in range(5):
+                send_keys('{DOWN}')
+                
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Preenche a localização atual
+            time.sleep(tempo_menor)
+            send_keys('^A')
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(local_atual, with_spaces=True)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # OK no aviso
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Preenche a discriminação
+            time.sleep(tempo_menor)
+            send_keys(disc_atual, with_spaces= True)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Dá enter em "Negociados na bolsa?"
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Apaga "Situação em 31/12/23"
+            time.sleep(tempo_menor)    
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # Preenche "Situação em 31/12/24"
+            time.sleep(tempo_menor)    
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(sit_24)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
+            # Dá tab em "Repetir"
+            time.sleep(tempo_menor)
+            send_keys('{TAB}')
+            
+            # OK no aviso
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # Preenche "Lucro ou Prejuízo"
+            time.sleep(tempo_menor)
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(lucro_ou_prejuizo)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # OK no aviso
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # Preenche "Imposto pago no Exterior"
+            time.sleep(tempo_menor)
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(imposto_ext)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # OK no aviso
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # Preenche "Valor Recebido"
+            time.sleep(tempo_menor)
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(valor_recebido)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # OK no aviso
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # Preenche "Imposto Pago no Exterior"
+            time.sleep(tempo_menor)
+            send_keys('{BACKSPACE}')
+            time.sleep(tempo_menor)
+            send_keys(imposto_pago_ext)
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+                
+            # Dá OK e finaliza o lançamento
+            time.sleep(tempo_menor)        
+            send_keys('{ENTER}')
+        
         if (grupo_atual == "08" and codigo_atual == "01") or (grupo_atual == "08" and codigo_atual == "10"):
+            # Preenche o código atual
+            time.sleep(tempo_menor)
+            send_keys(codigo_atual)
+            time.sleep(tempo_menor)
+            send_keys('{DOWN}')
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             # Preenche a localização atual
             time.sleep(tempo_menor)
             send_keys('^A')
@@ -471,6 +600,14 @@ def NovoLancamento(caminho):
                 send_keys('{ENTER}')
         
         if grupo_atual == "08" and codigo_atual == "02":
+            # Preenche o código atual
+            time.sleep(tempo_menor)
+            send_keys(codigo_atual)
+            time.sleep(tempo_menor)
+            send_keys('{DOWN}')
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             # Preenche a localização atual
             time.sleep(tempo_menor)
             send_keys('^A')
@@ -616,6 +753,14 @@ def NovoLancamento(caminho):
                 send_keys('{ENTER}')
                 
         if grupo_atual == "08" and codigo_atual == "03":
+            # Preenche o código atual
+            time.sleep(tempo_menor)
+            send_keys(codigo_atual)
+            time.sleep(tempo_menor)
+            send_keys('{DOWN}')
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             # Preenche a localização atual
             time.sleep(tempo_menor)
             send_keys('^A')
@@ -761,6 +906,14 @@ def NovoLancamento(caminho):
                 send_keys('{ENTER}')
         
         if grupo_atual == "08" and codigo_atual == "99":
+            # Preenche o código atual
+            time.sleep(tempo_menor)
+            send_keys(codigo_atual)
+            time.sleep(tempo_menor)
+            send_keys('{DOWN}')
+            time.sleep(tempo_menor)
+            send_keys('{ENTER}')
+            
             # Preenche a localização atual
             time.sleep(tempo_menor)
             send_keys('^A')

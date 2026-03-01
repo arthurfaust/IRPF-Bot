@@ -3,6 +3,8 @@ import FreeSimpleGUI as sg
 def buscar_arquivo():
     sg.theme('Reddit')
 
+    arquivo_escolhido = None
+    
     layout = [
         # O 'Input' recebe o caminho e o 'FileBrowse' abre a busca
         [sg.Text('Selecione o arquivo que deseja fazer o lançamento:')],
@@ -23,5 +25,7 @@ def buscar_arquivo():
             arquivo_escolhido = valores['caminho_arquivo']
             print(f'Arquivo selecionado: {arquivo_escolhido}')
             janela.close()
+            return arquivo_escolhido
     
+    janela.close()
     return arquivo_escolhido

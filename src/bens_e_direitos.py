@@ -1,3 +1,4 @@
+import buscar_arquivos
 import pywinauto, pyautogui, time
 import pandas as pd
 from pywinauto.keyboard import send_keys
@@ -1037,3 +1038,6 @@ def NovoLancamento(caminho):
         linha_atual += 1
         print("Linha Atual: {}".format(linha_atual))
     print("Lançamento finalizado.")
+    lancamento_finalizado = True
+    
+    return lancamento_finalizado

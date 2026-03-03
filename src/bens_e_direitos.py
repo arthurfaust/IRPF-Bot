@@ -1,10 +1,12 @@
-import buscar_arquivos
+import interface
 import pywinauto, pyautogui, time
 import pandas as pd
 from pywinauto.keyboard import send_keys
 
-def AbrirIRPF():
+def abrir_irpf():
+
     # Open Start Menu, search the IRPF program and open it
+    print("Abrindo IRPF...")
     time.sleep(0.5)
     send_keys('{VK_LWIN}')
     time.sleep(0.5)
@@ -12,8 +14,9 @@ def AbrirIRPF():
     time.sleep(0.5)
     send_keys('{ENTER}')
     
-def AbrirDeclaracaoCliente(caminho):
+def abrir_declaracao(caminho):
     
+    print("Abrindo declaração do cliente...")
     df = pd.read_excel(caminho, header=None)
     nome = df.iloc[1,0]
     # Trigger para abrir a declaração do cliente
@@ -41,7 +44,9 @@ def AbrirDeclaracaoCliente(caminho):
         
             break
     
-def AbrirBenseDireitos():
+def abrir_bens_e_direitos():
+    
+    print("Abrindo Bens e Direitos...")
     # Trigger para iniciar o preenchimento de "Bens e Direitos"
     # Cor do pixel de trigger (180,90) = (160, 225, 185)
     while True:
@@ -57,13 +62,14 @@ def AbrirBenseDireitos():
 
             break
         
-def NovoLancamento(caminho):
+def novo_lancamento(caminho):
     
     df = pd.read_excel(caminho, header=None)
     linha_atual = 18
-    QuantidadeLinhas = len(df) - linha_atual
+    quantidade_lancamentos = len(df) - linha_atual
+    lancamento_atual = 1
     
-    print("Quantidade lançamentos: {}".format(QuantidadeLinhas))
+    print("Quantidade lançamentos: {}".format(quantidade_lancamentos))
     print("Linha Atual: {}".format(linha_atual))
     
     # Enquanto a linha atual for menor que o tamanho do dataframe
@@ -71,7 +77,7 @@ def NovoLancamento(caminho):
 
         # Se a célula ATUAL estiver vazia, para a automação
         if pd.isna(df.iloc[linha_atual, 0]): break
-            
+        
         grupo_atual = df.iloc[linha_atual,0]
         codigo_atual = df.iloc[linha_atual,1]
         local_atual = df.iloc[linha_atual,2]
@@ -86,6 +92,8 @@ def NovoLancamento(caminho):
         cnpj_atual = "28640024000124"
         tempo_menor = 0.5
         tempo_maior = 0.5
+        
+        print("Executando lançamento {} de {}...".format(lancamento_atual, quantidade_lancamentos))
         
         # Move o cursor para "Novo" e clica
         time.sleep(tempo_maior)
@@ -1035,9 +1043,12 @@ def NovoLancamento(caminho):
                 time.sleep(tempo_menor)
                 send_keys('{ENTER}')
         
+        progresso = lancamento_atual / quantidade_lancamentos * 100
+        print("Lançamento {} finalizado. [{:.0f}%]".format(lancamento_atual, progresso))
         linha_atual += 1
-        print("Linha Atual: {}".format(linha_atual))
-    print("Lançamento finalizado.")
+        lancamento_atual += 1
+
+    print("Lançamento geral finalizado.")
     lancamento_finalizado = True
     
     return lancamento_finalizado
